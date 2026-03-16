@@ -1,5 +1,7 @@
 # Homebrew tap for Clove
 
+Installs the self-contained macOS binary (no Bun).
+
 ```bash
 brew tap 10ko/clove
 brew install clove

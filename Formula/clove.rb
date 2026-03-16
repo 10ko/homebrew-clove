@@ -1,26 +1,20 @@
-# Homebrew formula for Clove. No code signing needed — installs from source and runs with Bun.
-# Tap: brew tap 10ko/clove && brew install clove
+# Homebrew formula for Clove. Installs the self-contained macOS binary (no Bun).
 # Docs: https://github.com/10ko/clove/blob/main/docs/homebrew.md
 
 class Clove < Formula
   desc "Orchestrate coding agents (local or Docker) with CLI and dashboard"
   homepage "https://github.com/10ko/clove"
-  url "https://github.com/10ko/clove/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  url "https://github.com/10ko/clove/releases/download/v0.1.0/clove-macos-arm64.zip"
+  # Filled by update-homebrew-tap workflow when you upload clove-macos-arm64.zip to the release
+  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
   license "MIT"
-  depends_on "oven-sh/bun/bun"
 
   def install
-    libexec.install Dir["*"]
-    cd libexec do
-      system Formula["bun"].opt_bin/"bun", "install"
-      system Formula["bun"].opt_bin/"bun", "run", "build"
-      system Formula["bun"].opt_bin/"bun", "run", "dashboard:build"
-    end
-
+    libexec.install "clove-macos-arm64", "dashboard"
+    chmod 0555, libexec/"clove-macos-arm64"
     (bin/"clove").write <<~EOS
       #!/bin/bash
-      cd "#{libexec}" && exec "#{Formula["bun"].opt_bin}/bun" run bin/clove.js "$@"
+      exec "#{libexec}/clove-macos-arm64" "$@"
     EOS
     chmod 0555, bin/"clove"
   end
