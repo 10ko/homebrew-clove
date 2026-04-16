@@ -4,9 +4,9 @@
 class Clove < Formula
   desc "Orchestrate coding agents (local or Docker) with CLI and dashboard"
   homepage "https://github.com/10ko/clove"
-  url "https://github.com/10ko/clove/releases/download/v0.0.6/clove-macos-arm64.zip"
+  url "https://github.com/10ko/clove/releases/download/v0.0.7/clove-macos-arm64.zip"
   # Filled by update-homebrew-tap workflow when you upload clove-macos-arm64.zip to the release
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "c2fbb1c896c8a2d570eb8bbc02d891374263ed0e51a471177cf0a35bf7c9438d"
   license "MIT"
 
   def install
