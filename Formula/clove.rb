@@ -4,9 +4,9 @@
 class Clove < Formula
   desc "Orchestrate coding agents (local or Docker) with CLI and dashboard"
   homepage "https://github.com/10ko/clove"
-  url "https://github.com/10ko/clove/releases/download/v0.0.12/clove-macos-arm64.zip"
-  version "0.0.12"
-  sha256 "9eb2b6ce0a0bf1267a5c4ec10c0f7e654dfeb9f89173abec21d4dbdcb684a9bf"
+  url "https://github.com/10ko/clove/releases/download/v0.0.13/clove-macos-arm64.zip"
+  version "0.0.13"
+  sha256 "d2c546db5f4c24299ddfb924dbbed592695169e646ed034200360599589912fb"
   license "MIT"
 
   def install
